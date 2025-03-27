@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-white">
       <main className="px-4 sm:px-6 lg:px-8 bg-[url('/images/beavers_abbey.webp')] bg-cover bg-center relative before:absolute before:inset-0 before:bg-black/15">
         <div className="mx-auto max-w-7xl py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
@@ -52,7 +52,7 @@ export default function Home() {
             </p>
             <div className="mt-6">
               <Link
-                href="https://www.scouts.org.uk/join"
+                href="/join"
                 className="inline-block text-[15px]/6 font-extrabold text-white py-2.5 px-3 rounded-xs bg-[#003982] hover:bg-[#023474] pointer"
               >
                 Join us today

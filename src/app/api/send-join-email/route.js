@@ -157,7 +157,7 @@ export async function POST(req) {
 
     // Send the email using Resend
     await resend.emails.send({
-      from: 'Tewkesbury Scouts <notifications@tewkesburyscouts.org.uk>',
+      from: 'Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>',
       to: 'nic.coates@tewkesburyscouts.org.uk',
       subject: joinType + ' Joining Enquiry for ' + localScoutGroup,
       html: emailContent, // Use the HTML content

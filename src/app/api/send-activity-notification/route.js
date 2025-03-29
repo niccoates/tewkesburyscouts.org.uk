@@ -192,7 +192,7 @@ export async function POST(req) {
 
     // Send the email using Resend
     await resend.emails.send({
-      from: 'Tewkesbury Scouts <notifications@tewkesburyscouts.org.uk>',
+      from: 'Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>',
       to: toRecipients,
       subject: subject,
       html: emailContent,

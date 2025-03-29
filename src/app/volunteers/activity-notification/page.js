@@ -28,7 +28,7 @@ export default function ActivityNotification() {
             This form is to be used to notify the District Lead Volunteer & District Team where activities are taking place away from the normal meeting place of the group/section.
           </p>
           <p className="text-lg sm:text-xl leading-loose text-gray-800 block mb-5">
-            A copy is also sent to your Group Scout Leader (or DESC if an Explorer Unit) and to the leader in charge.
+            A copy is also sent to your Group Leader Volunteer (or DESC if an Explorer Unit) and to the leader in charge.
           </p>
         </section>
 

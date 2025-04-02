@@ -65,6 +65,12 @@ const navigation = [
         target: '_blank',
         rel: 'noopener noreferrer',
       },
+      {
+        name: 'Service status',
+        href: 'https://status.tewkesburyscouts.org.uk',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
     ],
   },
   { name: 'Contact', href: '/contact' },

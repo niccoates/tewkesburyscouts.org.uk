@@ -30,6 +30,11 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           async
         />
+        <Script
+          src="https://status.tewkesburyscouts.org.uk/script.js"
+          async
+          defer
+        />
       </body>
     </html>
   );

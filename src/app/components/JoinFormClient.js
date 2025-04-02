@@ -512,7 +512,7 @@ export default function JoinFormClient() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full bg-blue-600 text-white py-2 px-4 text-sm font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+              className={`w-full bg-[#003982] text-white py-2 px-4 text-sm font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                 isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >

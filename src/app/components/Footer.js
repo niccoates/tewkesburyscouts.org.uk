@@ -52,7 +52,6 @@ const navigation = {
       },
     ],
     company: [
-      { name: 'About us', href: '/about' },
       { 
         name: 'Gloucestershire Scouts', 
         href: 'https://www.gscouts.org.uk',
@@ -163,6 +162,16 @@ const navigation = {
             <div>
               <h3 className="text-sm/6 font-semibold text-gray-900">Useful Links</h3>
               <ul role="list" className="mt-6 space-y-4">
+              <li className="text-sm/6 text-gray-600 hover:text-gray-900">
+              <a href="https://status.tewkesburyscouts.org.uk">
+              <img 
+                src="https://status.tewkesburyscouts.org.uk/badge.svg" 
+                width="22px" 
+                height="22px" 
+                alt="Status badge"
+                className="inline -ml-2 mr-1"
+              /> Service Status</a>
+              </li>
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <a

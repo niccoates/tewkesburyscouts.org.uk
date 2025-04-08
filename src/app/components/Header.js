@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState } from 'react'; // Ensure this import is present
 import { Dialog, DialogPanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -54,7 +54,8 @@ const navigation = [
         target: '_blank',
         rel: 'noopener noreferrer',
       },
-      { name: 'Training calendar', 
+      { 
+        name: 'Training calendar', 
         href: 'https://bookwhen.com/gscouts',
         target: '_blank',
         rel: 'noopener noreferrer',        
@@ -73,6 +74,7 @@ const navigation = [
       },
     ],
   },
+  { name: 'Events', href: '/events' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -80,12 +82,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-50 border-b border-gray-100">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
+    <header className="bg-white border-b border-gray-100">
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Tewkesbury Scouts</span>
-            <Image src="/tscouts_navy.png" alt="Scouts logo" width={150} height={80} />
+            <Image src="/tscouts_navy.png" alt="Scouts logo" width={150} height={60} />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -98,16 +100,16 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-10">
+        <div className="hidden lg:flex lg:items-center lg:gap-x-8">
           {navigation.map((item) =>
             item.subMenu ? (
               <Menu as="div" className="relative" key={item.name}>
                 {({ open }) => (
                   <>
                     <MenuButton
-                      className={`flex items-center text-[15px]/6 font-bold cursor-pointer ${
-                        open ? 'text-[#003982]' : 'text-gray-900'
-                      } py-1.5 px-2 hover:text-[#003982] hover:underline`}
+                      className={`flex items-center text-base sm:text-[15px]/6 font-bold cursor-pointer ${
+                        open ? 'text-[#003087]' : 'text-gray-900'
+                      } py-1.5 px-2 hover:text-[#003087] hover:underline`}
                     >
                       {item.name}
                       <ChevronDownIcon className="ml-1 size-4" aria-hidden="true" />
@@ -118,10 +120,10 @@ export default function Header() {
                           {({ active }) => (
                             <a
                               href={subItem.href}
-                              target={subItem.target || '_self'} // Use target from navigation array
-                              rel={subItem.rel || undefined} // Use rel from navigation array
+                              target={subItem.target || '_self'}
+                              rel={subItem.rel || undefined}
                               className={`block px-6 py-3 text-sm text-gray-700 ${
-                                active ? 'text-[#003982] underline' : ''
+                                active ? 'text-[#003087] underline' : ''
                               }`}
                             >
                               {subItem.name}
@@ -137,7 +139,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-[15px]/6 font-bold text-gray-900 py-1.5 px-2 hover:text-[#003982] hover:underline"
+                className="text-base sm:text-[15px]/6 font-bold text-gray-900 py-1.5 px-2 hover:text-[#003087] hover:underline"
               >
                 {item.name}
               </a>
@@ -145,7 +147,7 @@ export default function Header() {
           )}
           <a
             href="/join"
-            className="text-[15px]/6 font-extrabold text-white py-1.5 px-3 rounded-xs bg-[#003982] hover:bg-[#023474] pointer hover:underline"
+            className="text-base sm:text-[15px]/6 font-extrabold text-white py-2 px-4 rounded-xs bg-[#003087] hover:bg-[#002674] hover:underline"
           >
             Join today
           </a>
@@ -153,11 +155,11 @@ export default function Header() {
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-4 sm:px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Tewkesbury Scouts</span>
-              <Image src="/tscouts_navy.png" alt="Scouts logo" width={130} height={80} />
+              <Image src="/tscouts_navy.png" alt="Scouts logo" width={150} height={50} />
             </a>
             <button
               type="button"
@@ -174,7 +176,7 @@ export default function Header() {
                 {navigation.map((item) =>
                   item.subMenu ? (
                     <div key={item.name}>
-                      <div className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:text-[#7413dc] hover:underline">
+                      <div className="-mx-3 block rounded-lg px-3 py-2 text-base sm:text-lg font-semibold text-gray-900 hover:text-[#003087] hover:underline">
                         {item.name}
                       </div>
                       <div className="pl-4 space-y-2">
@@ -182,9 +184,9 @@ export default function Header() {
                           <a
                             key={subItem.name}
                             href={subItem.href}
-                            target={subItem.target || '_self'} // Use target from navigation array
-                            rel={subItem.rel || undefined} // Use rel from navigation array
-                            className="-mx-3 block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#7413dc] hover:underline"
+                            target={subItem.target || '_self'}
+                            rel={subItem.rel || undefined}
+                            className="-mx-3 block rounded-lg px-3 py-2 text-sm sm:text-base text-gray-700 hover:bg-gray-50 hover:text-[#003087] hover:underline"
                           >
                             {subItem.name}
                           </a>
@@ -195,7 +197,7 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:text-[#7413dc] hover:underline"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base sm:text-lg font-semibold text-gray-900 hover:text-[#003087] hover:underline"
                     >
                       {item.name}
                     </a>
@@ -205,9 +207,9 @@ export default function Header() {
               <div className="py-6">
                 <a
                   href="/join"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-[#003982] hover:bg-[#023474] hover:underline"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base sm:text-lg font-semibold text-white bg-[#003087] hover:bg-[#002674] hover:underline"
                 >
-                  Join us
+                  Join today
                 </a>
               </div>
             </div>

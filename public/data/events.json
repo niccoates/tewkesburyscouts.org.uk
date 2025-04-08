@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "St. George's Parade & Service",
+      "date": "2025-04-27",
+      "description": "Tewkesbury Scouts invites you to our St. George's Parade and Service at Tewkesbury Abbey.",
+      "location": "Tewkesbury Abbey"
+    },
+    {
+      "id": 2,
+      "title": "Beavers & Cubs Activity Day",
+      "date": "2025-09-27",
+      "description": "Calling all Beavers and Cubs! Join us on the River Avon for a day of water and bushcraft activities.",
+      "location": "Severn Sailing Club"
+    },
+    {
+      "id": 3,
+      "title": "Scouts & Explorers Activity Day",
+      "date": "2025-09-28",
+      "description": "Calling all Scouts and Explorers! Join us on the River Avon for a day of water and bushcraft activities.",
+      "location": "Severn Sailing Club"
+    }
+  ]

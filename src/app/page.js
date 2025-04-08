@@ -2,7 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 import JoinToday from './components/JoinToday';
 
-export default function Home() {
+export async function getEvents() {
+  const res = await fetch(`http://localhost:3000/data/events.json`, {
+    cache: "no-store",
+  });
+  const events = await res.json();
+  return events.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+export default async function Home() {
+  const events = await getEvents();
+  const today = new Date();
+  const upcomingEvents = events
+    .filter((event) => new Date(event.date) >= today)
+    .slice(0, 2);
+
   return (
     <div className="bg-white">
       <main className="px-4 sm:px-6 lg:px-8 bg-[url('/images/beavers_abbey.webp')] bg-cover bg-center relative before:absolute before:inset-0 before:bg-black/15">
@@ -69,25 +83,6 @@ export default function Home() {
                 className="relative h-80 sm:h-96 rounded-sm shadow-md z-10 object-cover w-full"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="scout-quote" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:pt-24 bg-white">
-        <div className="relative">
-          <div className="flex items-start">
-            <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#006ddf] mr-2 sm:mr-4 -mt-4 sm:-mt-6">“</span>
-            <div>
-              <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight">
-                I was scared to camp out, but with my friends, I did it!
-                <br />
-                I want to do it again!
-              </blockquote>
-              <p className="mt-3 text-lg sm:text-xl text-gray-500">
-                Albie, 7, Beaver Scout
-              </p>
-            </div>
-            <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#006ddf] ml-2 sm:ml-4 -mb-2 sm:-mb-4">”</span>
           </div>
         </div>
       </section>
@@ -198,7 +193,48 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="scout-quote" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:mt-24 bg-white">
+      <section id="upcoming-events-snippet" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-gray-50 rounded-md my-24">
+        <div className="flex justify-between items-center mb-5">
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-gray-900">
+            Upcoming Events
+          </h2>
+          <Link
+            href="/events"
+            className="text-base sm:text-lg font-semibold text-[#006ddf] hover:underline"
+          >
+            View all events
+          </Link>
+        </div>
+        {upcomingEvents.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-12 mt-12 mb-4">
+            {upcomingEvents.map((event) => (
+              <div key={event.id} className="border-l-4 border-gray-800 pl-8">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                  {event.title}
+                </h3>
+                <p className="text-base sm:text-lg mt-2 text-gray-600">
+                  {new Date(event.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+                <p className="text-base sm:text-lg text-gray-500 mt-4 line-clamp-2">
+                  {event.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-base sm:text-lg text-gray-700">
+            No upcoming events at the moment. Check back soon!
+          </p>
+        )}
+      </section>
+
+      <JoinToday/>
+
+      <section id="scout-quote" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 sm:mt-24 bg-white">
         <div className="relative">
           <div className="flex items-start">
             <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#003982] mr-2 sm:mr-4 -mt-4 sm:-mt-6">“</span>
@@ -214,8 +250,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <JoinToday/>
     </div>
   );
 }

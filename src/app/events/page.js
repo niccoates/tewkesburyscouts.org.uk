@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export async function getEvents() {
-  const res = await fetch(`http://localhost:3000/data/events.json`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/events.json`, {
     cache: "no-store",
   });
   const events = await res.json();

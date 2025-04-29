@@ -19,5 +19,19 @@
       "date": "2025-09-28",
       "description": "Calling all Scouts and Explorers! Join us on the River Avon for a day of water and bushcraft activities.",
       "location": "Severn Sailing Club"
+    },
+    {
+      "id": 4,
+      "title": "Winchcombe Scouts Spring Fayre",
+      "date": "2025-05-05",
+      "description": "Come and join 1st Winchcombe Scouts between 11am and 3pm at their Scout Hut on May Day for a day of fun, games, food and festivities.",
+      "location": "Winchcombe Scout Hut, GL52 5NF"
+    },
+    {
+      "id": 5,
+      "title": "Woodmancote May Day",
+      "date": "2025-05-05",
+      "description": "Come and join 1st Woodmancote Scouts from 12:30pm until 4pm at the Woodmancote May Day Fete. Watch the Beavers parade and grab a bite to eat at our BBQ.",
+      "location": "Woodmancote Village Hall, GL52 9HX"
     }
   ]

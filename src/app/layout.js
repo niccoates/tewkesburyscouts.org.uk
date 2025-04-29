@@ -15,6 +15,58 @@ export const metadata = {
     template: "%s | Tewkesbury Scouts",
   },
   description: "Tewkesbury Scouts offers fun, challenging adventures for young people aged 4-25, helping them learn new skills and make a positive impact in their communities.",
+  keywords: ["Tewkesbury Scouts", "Scouting", "youth programs", "adventure activities", "community service", "skills development"], // Add relevant keywords
+  robots: {
+    index: true, 
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.tewkesburyscouts.org.ukm",
+  },
+  openGraph: {
+    title: {
+      default: "Tewkesbury Scouts - Empowering Young People",
+      template: "%s | Tewkesbury Scouts",
+    },
+    description: "Tewkesbury Scouts offers fun, challenging adventures for young people aged 4-25, helping them learn new skills and make a positive impact in their communities.",
+    url: "https://www.tewkesburyscouts.org.uk",
+    siteName: "Tewkesbury Scouts",
+    images: [
+      {
+        url: "https://www.tewkesburyscouts.org.uk/images/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Tewkesbury Scouts",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: {
+      default: "Tewkesbury Scouts - Empowering Young People",
+      template: "%s | Tewkesbury Scouts",
+    },
+    description: "Tewkesbury Scouts offers fun, challenging adventures for young people aged 4-25, helping them learn new skills and make a positive impact in their communities.",
+    images: ["https://www.tewkesburyscouts.org.uk/images/og.png"], 
+    creator: "@TewkesburyScouts",
+  },
+  icons: {
+    icon: "/favicon.ico", // Path to favicon
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({ children }) {

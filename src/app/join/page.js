@@ -4,6 +4,9 @@ export const metadata = {
   title: "Join us | Tewkesbury Scouts",
   description: "Join Tewkesbury Scouts as a young person or adult volunteer and start your adventure today. Open to ages 4-25, we offer fun, skills, and community impact.",
   keywords: "scouts, tewkesbury, join, youth",
+  alternates: {
+    canonical: "https://www.tewkesburyscouts.org/join", // Page-specific canonical URL
+  },
 };
 
 export default function JoinPage() {

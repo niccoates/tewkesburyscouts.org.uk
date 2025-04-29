@@ -4,6 +4,9 @@ export const metadata = {
   title: "Contact us | Tewkesbury Scouts",
   description: "Get in touch with Tewkesbury Scouts. Have a question, story, or media request? Fill out our contact form, and we'll get back to you soon.",
   keywords: "scouts, tewkesbury, join, youth",
+  alternates: {
+    canonical: "https://www.tewkesburyscouts.org/contact", // Page-specific canonical URL
+  },
 };
 
 export default function ContactForm() {

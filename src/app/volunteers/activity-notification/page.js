@@ -4,6 +4,9 @@ export const metadata = {
   title: "Activity Notification | Tewkesbury Scouts",
   description: "Notify the Tewkesbury Scouts District Team about activities taking place away from your normal meeting place. Submit details for approval and coordination.",
   keywords: "scouts, tewkesbury, join, youth",
+  alternates: {
+    canonical: "https://www.tewkesburyscouts.org/volunteers/activity-notifications", // Page-specific canonical URL
+  },
 };
 
 export default function ActivityNotification() {

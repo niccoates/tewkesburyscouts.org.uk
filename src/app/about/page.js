@@ -6,6 +6,9 @@ export const metadata = {
   title: "About us | Tewkesbury Scouts",
   description: "Learn more about Tewkesbury Scouts, our mission, and our impact on young people in the community.",
   keywords: "scouts, tewkesbury, join, youth",
+  alternates: {
+    canonical: "https://www.tewkesburyscouts.org/about", // Page-specific canonical URL
+  },
 };
 
 export default function AboutUs() {

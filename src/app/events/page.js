@@ -4,6 +4,9 @@ export const metadata = {
   title: "Events",
   description: "Discover upcoming events with Tewkesbury Scouts.",
   keywords: "scouts, tewkesbury, events, youth",
+  alternates: {
+    canonical: "https://www.tewkesburyscouts.org/events", // Page-specific canonical URL
+  },
 };
 
 export async function getEvents() {

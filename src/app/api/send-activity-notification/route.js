@@ -1,6 +1,6 @@
 // /src/app/api/send-activity-notification/route.js
 
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -27,28 +27,28 @@ export async function POST(req) {
   try {
     // Determine additional recipients based on Group/Unit
     const additionalRecipients = [];
-    if (groupUnit === '1st Woodmancote') {
-      additionalRecipients.push('derek.platt@1wsg.org.uk');
-    } else if (groupUnit === '1st Gotherington') {
-      additionalRecipients.push('deancgore@gmail.com');
-    } else if (groupUnit === '2nd Twyning') {
-      additionalRecipients.push('theianpalmer@gmail.com');
-    } else if (groupUnit === '3rd Tewkesbury') {
-      additionalRecipients.push('kula.margaret@googlemail.com');
+    if (groupUnit === "1st Woodmancote") {
+      additionalRecipients.push("derek.platt@1wsg.org.uk");
+    } else if (groupUnit === "1st Gotherington") {
+      additionalRecipients.push("nic.coates@gotheringtonscouts.org.uk");
+    } else if (groupUnit === "2nd Twyning") {
+      additionalRecipients.push("theianpalmer@gmail.com");
+    } else if (groupUnit === "3rd Tewkesbury") {
+      additionalRecipients.push("kula.margaret@googlemail.com");
     } else if (
-      groupUnit === 'Pioneer Explorer Unit' ||
-      groupUnit === 'Red Wolves Explorer Unit' ||
-      groupUnit === 'Extreme Explorer Unit' ||
-      groupUnit === 'Haberpakka Young Leader Unit'
+      groupUnit === "Pioneer Explorer Unit" ||
+      groupUnit === "Red Wolves Explorer Unit" ||
+      groupUnit === "Extreme Explorer Unit" ||
+      groupUnit === "Haberpakka Young Leader Unit"
     ) {
-      additionalRecipients.push('tewkesburydesc@gmail.com');
+      additionalRecipients.push("tewkesburydesc@gmail.com");
     }
 
     // Base recipients
-    const toRecipients = [email, 'cdlodwig@gmail.com', ...additionalRecipients];
+    const toRecipients = [email, "cdlodwig@gmail.com", ...additionalRecipients];
 
     // Construct the email subject
-    const subject = `${groupUnit} - ${sections.join(', ')} - ${activityName}`;
+    const subject = `${groupUnit} - ${sections.join(", ")} - ${activityName}`;
 
     // Construct the email content as HTML with inline CSS
     const emailContent = `
@@ -84,7 +84,7 @@ export async function POST(req) {
               Membership Number:
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${membershipNumber || 'Not provided'}
+              ${membershipNumber || "Not provided"}
             </p>
 
             <p style="font-size: 16px; font-weight: bold; color: #374151; margin-bottom: 8px;">
@@ -105,7 +105,7 @@ export async function POST(req) {
               Section(s):
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${sections.join(', ')}
+              ${sections.join(", ")}
             </p>
           </div>
 
@@ -176,7 +176,7 @@ export async function POST(req) {
               Risk Assessment:
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${riskAssessment ? 'Yes, completed' : 'No'}
+              ${riskAssessment ? "Yes, completed" : "No"}
             </p>
           </div>
 
@@ -192,21 +192,27 @@ export async function POST(req) {
 
     // Send the email using Resend
     await resend.emails.send({
-      from: 'Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>',
+      from: "Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>",
       to: toRecipients,
       subject: subject,
       html: emailContent,
     });
 
-    return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ message: "Email sent successfully" }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   } catch (error) {
-    console.error('Error sending email:', error);
-    return new Response(JSON.stringify({ error: 'Failed to send email', details: error.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    console.error("Error sending email:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   }
 }

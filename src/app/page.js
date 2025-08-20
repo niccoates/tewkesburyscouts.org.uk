@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import JoinToday from './components/JoinToday';
+import JoinToday from "./components/JoinToday";
 
 export async function getEvents() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/events.json`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/events.json`,
+    {
+      cache: "no-store",
+    },
+  );
   const events = await res.json();
   return events.sort((a, b) => new Date(a.date) - new Date(b.date));
 }
@@ -28,7 +31,10 @@ export default async function Home() {
                   Building Skills for Life, One Adventure at a Time
                 </h1>
                 <p className="mt-6 sm:mt-8 text-pretty text-base sm:text-lg font-medium text-gray-100 lg:max-w-none drop-shadow-md">
-                  We are Tewkesbury Scouts, offering challenges and adventures to young people aged 4 to 18 in Gotherington, Twyning, Winchcombe, Woodmancote, and Tewkesbury. Join us to build confidence, learn new skills, and discover your own adventure.
+                  We are Tewkesbury Scouts, offering challenges and adventures
+                  to young people aged 4 to 18 in Gotherington, Twyning,
+                  Winchcombe, Woodmancote, and Tewkesbury. Join us to build
+                  confidence, learn new skills, and discover your own adventure.
                 </p>
                 <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
                   <Link
@@ -52,18 +58,23 @@ export default async function Home() {
         </div>
       </main>
 
-      <section id="intro" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 bg-white">
+      <section
+        id="intro"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 bg-white"
+      >
         <div className="lg:flex lg:items-center lg:gap-x-12">
           <div className="lg:w-2/3">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl tracking-wide leading-[3rem] sm:leading-[4rem] font-black text-gray-900">
-              <span className="relative inline-block">
-                Hey, we're
-              </span>
+              <span className="relative inline-block">Hey, we're</span>
               <br />
               <span className="text-[#7413dc]">Tewkesbury Scouts</span>
             </h2>
             <p className="mt-4 text-lg sm:text-xl text-gray-600 leading-loose">
-              We provide the adventure of Scouting to over 400 young people across the borough, helping them develop skills for life through fun activities, teamwork, and new challenges. Are you ready to make friends, learn something new, and explore the outdoors? Let's get started!
+              We provide the adventure of Scouting to over 400 young people
+              across the borough, helping them develop skills for life through
+              fun activities, teamwork, and new challenges. Are you ready to
+              make friends, learn something new, and explore the outdoors? Let's
+              get started!
             </p>
             <div className="mt-6">
               <Link
@@ -87,16 +98,20 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="groups" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-24 bg-white">
+      <section
+        id="groups"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-24 bg-white"
+      >
         <h2 className="w-full text-4xl sm:text-5xl font-black tracking-tight text-gray-900 lg:shrink-0">
           Get Involved
         </h2>
         <p className="mt-4 text-lg sm:text-xl text-gray-600 leading-relaxed">
-          Future go-getters are asking big questions, and our volunteers are sharing skills for life across Tewkesbury.
+          Future go-getters are asking big questions, and our volunteers are
+          sharing skills for life across Tewkesbury.
         </p>
         <div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-24">
           <Link
-            href="https://www.scouts.org.uk/groups/10016416?loc=gl53&page=9&slug=1st-Gotherington"
+            href="https://www.gotheringtonscouts.org.uk"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white group cursor-pointer block"
@@ -105,7 +120,8 @@ export default async function Home() {
               1st Gotherington
             </h3>
             <p className="text-gray-600 mt-2 leading-normal line-clamp-3 group-hover:text-[#088486] transition-colors duration-300">
-              In the north of Bishop’s Cleeve, perfect for tent pitching with Beavers, Cubs, and Scouts.
+              In the north of Bishop’s Cleeve, perfect for tent pitching with
+              Beavers, Cubs, and Scouts.
             </p>
             <span className="mt-4 inline-block text-sm font-semibold text-[#088486] hover:underline group-hover:text-[#088486] transition-colors duration-300">
               Find out more
@@ -121,7 +137,8 @@ export default async function Home() {
               3rd Tewkesbury
             </h3>
             <p className="text-gray-600 mt-2 leading-normal line-clamp-3 group-hover:text-[#7413dc] transition-colors duration-300">
-              In central Tewkesbury, this group helps youth learn skills with an Abbey view.
+              In central Tewkesbury, this group helps youth learn skills with an
+              Abbey view.
             </p>
             <span className="mt-4 inline-block text-sm font-semibold text-[#7413dc] hover:underline group-hover:text-[#7413dc] transition-colors duration-300">
               Find out more
@@ -153,7 +170,8 @@ export default async function Home() {
               1st Winchcombe
             </h3>
             <p className="text-gray-600 mt-2 leading-normal line-clamp-3 group-hover:text-[#25b755] transition-colors duration-300">
-              A fantastic place to discover and explore in a traditional Cotswold town.
+              A fantastic place to discover and explore in a traditional
+              Cotswold town.
             </p>
             <span className="mt-4 inline-block text-sm font-semibold text-[#25b755] hover:underline group-hover:text-[#25b755] transition-colors duration-300">
               Find out more
@@ -169,7 +187,8 @@ export default async function Home() {
               1st Woodmancote
             </h3>
             <p className="text-gray-600 mt-2 leading-normal line-clamp-3 group-hover:text-[#205b41] transition-colors duration-300">
-              The largest group in Gloucestershire, covering Bishop’s Cleeve and Woodmancote.
+              The largest group in Gloucestershire, covering Bishop’s Cleeve and
+              Woodmancote.
             </p>
             <span className="mt-4 inline-block text-sm font-semibold text-[#205b41] hover:underline group-hover:text-[#205b41] transition-colors duration-300">
               Find out more
@@ -184,7 +203,8 @@ export default async function Home() {
               Explorer Scout Units
             </h3>
             <p className="text-gray-600 mt-2 leading-normal line-clamp-3 group-hover:text-[#ff912a] transition-colors duration-300">
-              Lead a team across the district or join our Young Leaders Unit for ages 14-18.
+              Lead a team across the district or join our Young Leaders Unit for
+              ages 14-18.
             </p>
             <span className="mt-4 inline-block text-sm font-semibold text-[#ff912a] hover:underline group-hover:text-[#ff912a] transition-colors duration-300">
               Find out more
@@ -193,7 +213,10 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="upcoming-events-snippet" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-gray-50 rounded-md my-24">
+      <section
+        id="upcoming-events-snippet"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-gray-50 rounded-md my-24"
+      >
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-gray-900">
             Upcoming Events
@@ -222,6 +245,12 @@ export default async function Home() {
                 <p className="text-base sm:text-lg text-gray-500 mt-4 line-clamp-2">
                   {event.description}
                 </p>
+                <a
+                  className="text-base sm:text-lg font-semibold text-[#006ddf] hover:underline mt-4 line-clamp-2"
+                  href={event.url}
+                >
+                  Register →
+                </a>
               </div>
             ))}
           </div>
@@ -232,21 +261,29 @@ export default async function Home() {
         )}
       </section>
 
-      <JoinToday/>
+      <JoinToday />
 
-      <section id="scout-quote" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 sm:mt-24 bg-white">
+      <section
+        id="scout-quote"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 sm:mt-24 bg-white"
+      >
         <div className="relative">
           <div className="flex items-start">
-            <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#003982] mr-2 sm:mr-4 -mt-4 sm:-mt-6">“</span>
+            <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#003982] mr-2 sm:mr-4 -mt-4 sm:-mt-6">
+              “
+            </span>
             <div>
               <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight">
-                Scouting in Tewkesbury taught me how to lead my team and make friends I’ll never forget!
+                Scouting in Tewkesbury taught me how to lead my team and make
+                friends I’ll never forget!
               </blockquote>
               <p className="mt-3 text-lg sm:text-xl text-gray-500">
                 Sophie, 15, Explorer Scout
               </p>
             </div>
-            <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#003982] ml-2 sm:ml-4 -mb-2 sm:-mb-4">”</span>
+            <span className="text-5xl sm:text-6xl lg:text-[200px] text-[#003982] ml-2 sm:ml-4 -mb-2 sm:-mb-4">
+              ”
+            </span>
           </div>
         </div>
       </section>

@@ -1,37 +1,46 @@
 [
-    {
-      "id": 1,
-      "title": "St. George's Parade & Service",
-      "date": "2025-04-27",
-      "description": "Tewkesbury Scouts invites you to our St. George's Parade and Service at Tewkesbury Abbey.",
-      "location": "Tewkesbury Abbey"
-    },
-    {
-      "id": 2,
-      "title": "Beavers & Cubs Activity Day",
-      "date": "2025-09-27",
-      "description": "Calling all Beavers and Cubs! Join us on the River Avon for a day of water and bushcraft activities.",
-      "location": "Severn Sailing Club"
-    },
-    {
-      "id": 3,
-      "title": "Scouts & Explorers Activity Day",
-      "date": "2025-09-28",
-      "description": "Calling all Scouts and Explorers! Join us on the River Avon for a day of water and bushcraft activities.",
-      "location": "Severn Sailing Club"
-    },
-    {
-      "id": 4,
-      "title": "Winchcombe Scouts Spring Fayre",
-      "date": "2025-05-05",
-      "description": "Come and join 1st Winchcombe Scouts between 11am and 3pm at their Scout Hut on May Day for a day of fun, games, food and festivities.",
-      "location": "Winchcombe Scout Hut, GL52 5NF"
-    },
-    {
-      "id": 5,
-      "title": "Woodmancote May Day",
-      "date": "2025-05-05",
-      "description": "Come and join 1st Woodmancote Scouts from 12:30pm until 4pm at the Woodmancote May Day Fete. Watch the Beavers parade and grab a bite to eat at our BBQ.",
-      "location": "Woodmancote Village Hall, GL52 9HX"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "St. George's Parade & Service",
+    "date": "2025-04-27",
+    "description": "Tewkesbury Scouts invites you to our St. George's Parade and Service at Tewkesbury Abbey.",
+    "location": "Tewkesbury Abbey"
+  },
+  {
+    "id": 2,
+    "title": "Beavers & Cubs Activity Day",
+    "date": "2025-09-27",
+    "description": "From paddling across the water to mastering bushcraft skills, there’s something for everyone to enjoy.",
+    "location": "Severn Sailing Club",
+    "url": "https://bookings.tewkesburyscouts.org.uk"
+  },
+  {
+    "id": 3,
+    "title": "Scouts & Explorers Activity Day",
+    "date": "2025-09-28",
+    "description": "From paddling across the water to mastering bushcraft skills, there’s something for everyone to enjoy.",
+    "location": "Severn Sailing Club",
+    "url": "https://bookings.tewkesburyscouts.org.uk"
+  },
+  {
+    "id": 4,
+    "title": "Winchcombe Scouts Spring Fayre",
+    "date": "2025-05-05",
+    "description": "Come and join 1st Winchcombe Scouts between 11am and 3pm at their Scout Hut on May Day for a day of fun, games, food and festivities.",
+    "location": "Winchcombe Scout Hut, GL52 5NF"
+  },
+  {
+    "id": 5,
+    "title": "Woodmancote May Day",
+    "date": "2025-05-05",
+    "description": "Come and join 1st Woodmancote Scouts from 12:30pm until 4pm at the Woodmancote May Day Fete. Watch the Beavers parade and grab a bite to eat at our BBQ.",
+    "location": "Woodmancote Village Hall, GL52 9HX"
+  },
+  {
+    "id": 6,
+    "title": "Annual General Meeting",
+    "date": "2025-09-27",
+    "description": "Join Tewkesbury District Scout Council for our Annual General Meeting followed by a BBQ.",
+    "location": "Severn Sailing Club"
+  }
+]

@@ -1,6 +1,6 @@
 // /src/app/api/send-join-email/route.js
 
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -43,7 +43,7 @@ export async function POST(req) {
             </p>
 
             ${
-              joinType === 'Young Person'
+              joinType === "Young Person"
                 ? `
                   <p style="font-size: 16px; font-weight: bold; color: #374151; margin-bottom: 8px;">
                     Young Person Name:
@@ -86,7 +86,7 @@ export async function POST(req) {
               Telephone:
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${telephone || 'Not provided'}
+              ${telephone || "Not provided"}
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export async function POST(req) {
               Address Line 2:
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${address.addressLine2 || 'Not provided'}
+              ${address.addressLine2 || "Not provided"}
             </p>
 
             <p style="font-size: 16px; font-weight: bold; color: #374151; margin-bottom: 8px;">
@@ -140,7 +140,7 @@ export async function POST(req) {
               Local Scout Group or Unit:
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${localScoutGroup || 'Not selected'}
+              ${localScoutGroup || "Not selected"}
             </p>
 
           </div>
@@ -157,21 +157,27 @@ export async function POST(req) {
 
     // Send the email using Resend
     await resend.emails.send({
-      from: 'Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>',
-      to: 'nic.coates@tewkesburyscouts.org.uk',
-      subject: joinType + ' Joining Enquiry for ' + localScoutGroup,
+      from: "Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>",
+      to: "nic.coates@gotheringtonscouts.org.uk",
+      subject: joinType + " Joining Enquiry for " + localScoutGroup,
       html: emailContent, // Use the HTML content
     });
 
-    return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ message: "Email sent successfully" }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   } catch (error) {
-    console.error('Error sending email:', error);
-    return new Response(JSON.stringify({ error: 'Failed to send email', details: error.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    console.error("Error sending email:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   }
 }

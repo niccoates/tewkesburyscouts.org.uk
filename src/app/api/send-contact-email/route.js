@@ -1,6 +1,6 @@
 // /src/app/api/send-contact-email/route.js
 
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -43,7 +43,7 @@ export async function POST(req) {
               Telephone:
             </p>
             <p style="font-size: 16px; color: #4b5563; margin-bottom: 16px;">
-              ${telephone || 'Not provided'}
+              ${telephone || "Not provided"}
             </p>
 
             <p style="font-size: 16px; font-weight: bold; color: #374151; margin-bottom: 8px;">
@@ -66,21 +66,27 @@ export async function POST(req) {
 
     // Send the email using Resend
     await resend.emails.send({
-      from: 'Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>',
-      to: 'nic.coates@tewkesburyscouts.org.uk',
-      subject: 'Contact Submission',
+      from: "Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>",
+      to: "nic.coates@gotheringtonscouts.org.uk",
+      subject: "Contact Submission",
       html: emailContent,
     });
 
-    return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ message: "Email sent successfully" }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   } catch (error) {
-    console.error('Error sending email:', error);
-    return new Response(JSON.stringify({ error: 'Failed to send email', details: error.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    console.error("Error sending email:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   }
 }

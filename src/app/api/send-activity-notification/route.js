@@ -45,7 +45,11 @@ export async function POST(req) {
     }
 
     // Base recipients
-    const toRecipients = [email, "cdlodwig@gmail.com", ...additionalRecipients];
+    const toRecipients = [
+      email,
+      "kat.holter@tewkesburyscouts.org.uk",
+      ...additionalRecipients,
+    ];
 
     // Construct the email subject
     const subject = `${groupUnit} - ${sections.join(", ")} - ${activityName}`;

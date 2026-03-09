@@ -109,7 +109,7 @@ export default function Footer() {
           {/* 1st Column: Copyright and Socials */}
           <div>
             <p className="text-sm/6 text-gray-600">
-              © 2025 Tewkesbury District Scouts. <br />
+              © 2026 Tewkesbury District Scouts. <br />
               All rights reserved.
             </p>
             <div className="flex gap-x-6 mt-4">
@@ -169,18 +169,6 @@ export default function Footer() {
               Useful Links
             </h3>
             <ul role="list" className="mt-6 space-y-4">
-              <li className="text-sm/6 text-gray-600 hover:text-gray-900">
-                <a href="https://status.tewkesburyscouts.org.uk">
-                  <img
-                    src="https://status.tewkesburyscouts.org.uk/badge.svg"
-                    width="22px"
-                    height="22px"
-                    alt="Status badge"
-                    className="inline -ml-2 mr-1"
-                  />{" "}
-                  Service Status
-                </a>
-              </li>
               {navigation.company.map((item) => (
                 <li key={item.name}>
                   <a

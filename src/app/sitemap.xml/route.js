@@ -28,10 +28,22 @@ export async function GET() {
       priority: 0.6,
     },
     {
+      url: 'https://www.tewkesburyscouts.org.uk/volunteers/training-funding-request',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: 'https://www.tewkesburyscouts.org.uk/contact',
       lastModified: new Date().toISOString(),
       changeFrequency: 'monthly',
       priority: 0.4,
+    },
+    {
+      url: 'https://www.tewkesburyscouts.org.uk/youth-lead-role',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
   ];
 

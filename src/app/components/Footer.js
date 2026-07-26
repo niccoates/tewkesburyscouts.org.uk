@@ -37,6 +37,10 @@ const navigation = {
       href: "/volunteers/activity-notification",
     },
     {
+      name: "Request Training Funding",
+      href: "/volunteers/training-funding-request",
+    },
+    {
       name: "Apply for Nights Away",
       href: "https://membership.scouts.org.uk/#/programmesupport/nightsaways/applyfornightsaway",
       target: "_blank",

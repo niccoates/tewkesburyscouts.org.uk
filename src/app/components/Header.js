@@ -4,10 +4,6 @@ import { useState } from "react"; // Ensure this import is present
 import {
   Dialog,
   DialogPanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -63,6 +59,10 @@ const navigation = [
         href: "/volunteers/activity-notification",
       },
       {
+        name: "Request Training Funding",
+        href: "/volunteers/training-funding-request",
+      },
+      {
         name: "Apply for Nights Away",
         href: "https://membership.scouts.org.uk/#/programmesupport/nightsaways/applyfornightsaway",
         target: "_blank",
@@ -84,10 +84,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-100">
+    <header className="relative z-50 overflow-visible bg-white border-b border-gray-100">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:p-6 lg:px-8"
+        className="relative mx-auto flex max-w-7xl items-center justify-between overflow-visible bg-white p-4 sm:p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
@@ -113,41 +113,28 @@ export default function Header() {
         <div className="hidden lg:flex lg:items-center lg:gap-x-8">
           {navigation.map((item) =>
             item.subMenu ? (
-              <Menu as="div" className="relative" key={item.name}>
-                {({ open }) => (
-                  <>
-                    <MenuButton
-                      className={`flex items-center text-base sm:text-[15px]/6 font-bold cursor-pointer ${
-                        open ? "text-[#003087]" : "text-gray-900"
-                      } py-1.5 px-2 hover:text-[#003087] hover:underline`}
+              <details className="group relative" key={item.name}>
+                <summary className="flex cursor-pointer list-none items-center px-2 py-1.5 text-base font-bold text-gray-900 hover:text-[#003087] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003087] sm:text-[15px]/6 [&::-webkit-details-marker]:hidden">
+                  {item.name}
+                  <ChevronDownIcon
+                    className="ml-1 size-4 transition-transform group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <div className="absolute left-0 top-full z-[60] w-64 divide-y divide-gray-200 bg-white shadow-lg ring-1 ring-black/5">
+                  {item.subMenu.map((subItem) => (
+                    <a
+                      key={subItem.name}
+                      href={subItem.href}
+                      target={subItem.target || "_self"}
+                      rel={subItem.rel || undefined}
+                      className="block px-6 py-3 text-sm text-gray-700 hover:text-[#003087] hover:underline focus:bg-gray-50 focus:text-[#003087] focus:outline-none"
                     >
-                      {item.name}
-                      <ChevronDownIcon
-                        className="ml-1 size-4"
-                        aria-hidden="true"
-                      />
-                    </MenuButton>
-                    <MenuItems className="absolute z-10 mt-2 w-56 origin-top-right bg-white shadow-lg focus:outline-none divide-y divide-gray-200">
-                      {item.subMenu.map((subItem) => (
-                        <MenuItem key={subItem.name}>
-                          {({ active }) => (
-                            <a
-                              href={subItem.href}
-                              target={subItem.target || "_self"}
-                              rel={subItem.rel || undefined}
-                              className={`block px-6 py-3 text-sm text-gray-700 ${
-                                active ? "text-[#003087] underline" : ""
-                              }`}
-                            >
-                              {subItem.name}
-                            </a>
-                          )}
-                        </MenuItem>
-                      ))}
-                    </MenuItems>
-                  </>
-                )}
-              </Menu>
+                      {subItem.name}
+                    </a>
+                  ))}
+                </div>
+              </details>
             ) : (
               <a
                 key={item.name}
@@ -166,13 +153,33 @@ export default function Header() {
           </a>
         </div>
       </nav>
+      <a
+        href="/youth-lead-role"
+        className="group block bg-[#f6c500] px-4 py-3 text-[#003087] transition-colors hover:bg-[#ffd634] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#003087]"
+      >
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-1 text-center sm:flex-row sm:gap-3">
+          <span className="font-black">
+            We&apos;re looking for a District Youth Lead
+          </span>
+          <span className="hidden sm:inline" aria-hidden="true">
+            •
+          </span>
+          <span className="text-sm font-semibold">
+            Applications close 13th August 2026
+          </span>
+          <span className="text-sm font-black underline decoration-2 underline-offset-2 group-hover:no-underline">
+            Find out more
+            <span aria-hidden="true"> →</span>
+          </span>
+        </div>
+      </a>
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
-        className="lg:hidden"
+        className="relative z-[100] lg:hidden"
       >
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-4 sm:px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 bg-black/20" />
+        <DialogPanel className="fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-4 sm:px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Tewkesbury Scouts</span>

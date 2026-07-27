@@ -37,12 +37,25 @@ export default function TrainingFundingRequestPage() {
           aria-labelledby="funding-request-form-heading"
           className="bg-gray-100 p-6 sm:p-8"
         >
-          <h2
-            id="funding-request-form-heading"
-            className="mb-6 text-2xl font-black text-[#003087]"
-          >
-            Request training funding
-          </h2>
+          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <h2
+              id="funding-request-form-heading"
+              className="text-2xl font-black text-[#003087]"
+            >
+              Request training funding
+            </h2>
+            <a
+              href="/documents/tewkesbury-training-funding-policy-april-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="self-start text-sm font-bold text-[#003087] underline underline-offset-4 hover:no-underline focus:outline-none focus:ring-2 focus:ring-[#003087] sm:self-auto"
+            >
+              View policy
+              <span className="ml-1" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </div>
           <TrainingFundingFormClient />
         </section>
       </div>

@@ -62,11 +62,12 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico", // Path to favicon
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }) {

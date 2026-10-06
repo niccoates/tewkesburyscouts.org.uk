@@ -47,7 +47,7 @@ export async function POST(req) {
     // Base recipients
     const toRecipients = [
       email,
-      "kat.holter@tewkesburyscouts.org.uk",
+      "carole.o'donnell@gloucestershire-scouts.org.uk",
       ...additionalRecipients,
     ];
 

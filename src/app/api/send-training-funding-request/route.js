@@ -47,7 +47,6 @@ export async function POST(request) {
     await resend.emails.send({
       from: "Tewkesbury Scouts <no-reply@tewkesburyscouts.org.uk>",
       to: [
-        "kat.holter@tewkesburyscouts.org.uk",
         "som.sadasivam@tewkesburyscouts.org.uk",
       ],
       replyTo: email,

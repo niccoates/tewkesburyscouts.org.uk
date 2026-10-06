@@ -153,26 +153,6 @@ export default function Header() {
           </a>
         </div>
       </nav>
-      <a
-        href="/youth-lead-role"
-        className="group block bg-[#f6c500] px-4 py-3 text-[#003087] transition-colors hover:bg-[#ffd634] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#003087]"
-      >
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-1 text-center sm:flex-row sm:gap-3">
-          <span className="font-black">
-            We&apos;re looking for a District Youth Lead
-          </span>
-          <span className="hidden sm:inline" aria-hidden="true">
-            •
-          </span>
-          <span className="text-sm font-semibold">
-            Applications close 13th August 2026
-          </span>
-          <span className="text-sm font-black underline decoration-2 underline-offset-2 group-hover:no-underline">
-            Find out more
-            <span aria-hidden="true"> →</span>
-          </span>
-        </div>
-      </a>
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}

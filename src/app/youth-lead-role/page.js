@@ -125,29 +125,11 @@ export default function YouthLeadRolePage() {
               Interested? Let&apos;s talk!
             </h2>
             <p>
-              To apply or find out more, please complete the form below.{" "}
-              <strong>Applications close 13th August 2026.</strong>
+              <strong>Applications are now closed.</strong>
             </p>
           </div>
         </section>
 
-        <section
-          aria-labelledby="youth-lead-form-heading"
-          className="mt-10 bg-gray-100 p-6 sm:p-8"
-        >
-          <h2
-            id="youth-lead-form-heading"
-            className="mb-6 text-2xl font-black text-[#003087]"
-          >
-            Get in touch
-          </h2>
-          <YouthLeadRoleFormClient />
-        </section>
-
-        <div className="mt-10 text-center text-lg font-bold text-[#003087]">
-          <p>Be the voice. Lead the change. Shape Scouting.</p>
-          <p className="mt-2">Tewkesbury District Scouts - Skills for Life</p>
-        </div>
       </div>
     </div>
   );
